@@ -1,5 +1,8 @@
 package model.entities;
 
+import model.exeception.ReservationExeception;
+
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class Reservation {
@@ -21,6 +24,4 @@ public class Reservation {
         this.guest = guest;
     }
 
-
-    
 }

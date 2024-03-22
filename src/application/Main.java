@@ -15,7 +15,7 @@ public class Main {
      String cpf = sc.nextLine();
      System.out.print("Data de entrada: ");
      String checkIn = sc.nextLine();
-     System.out.print("ata de saida: ");
+     System.out.print("Data de saida: ");
      String checkOut = sc.nextLine();
     }
 }
