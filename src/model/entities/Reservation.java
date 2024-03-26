@@ -11,6 +11,7 @@ public class Reservation {
     private Guest guest;
 
     public Reservation(LocalDateTime checkIn, LocalDateTime checkOut, Guest guest) {
+        checkingDates(checkIn,checkOut);
         this.checkIn = checkIn;
         this.checkOut = checkOut;
         this.guest = guest;
@@ -23,8 +24,16 @@ public class Reservation {
     public void setGuest(Guest guest) {
         this.guest = guest;
     }
-    private void checkingDates(LocalDateTime checkIn, LocalDateTime checkout){
-        Duration lengthSay = Duration.between(checkIn, checkout);
+    public void dateAlteration(LocalDateTime checkIn, LocalDateTime checkOut){
+        checkingDates(checkIn,checkOut);
+        this.checkIn = checkIn;
+        this.checkOut = checkOut;
+        System.out.print("Datas alteradas com sucesso!");
+
+
+    }
+    private void checkingDates(LocalDateTime checkIn, LocalDateTime checkOut){
+        Duration lengthSay = Duration.between(checkIn, checkOut);
         if(lengthSay.toSeconds() <= 0){
             throw new ReservationExeception("A data de saida não pode ser antes que a de entrada");
         }
