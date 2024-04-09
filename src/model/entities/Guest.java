@@ -1,16 +1,19 @@
 package model.entities;
 
+import model.services.VerifyingCPF;
+
 import java.util.Objects;
 
 public class Guest {
    private String name;
    private Integer age;
    private String cpf;
+   private VerifyingCPF vp = new VerifyingCPF();
 
    public Guest(String name, Integer age, String cpf){
        this.name = name;
        this.age = age;
-       this.cpf= cpf;
+       this.cpf= vp.validateCPF(cpf);
    };
    public String getName(){
        return name;
@@ -32,9 +35,7 @@ public class Guest {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
+
 
     @Override
     public boolean equals(Object o) {
