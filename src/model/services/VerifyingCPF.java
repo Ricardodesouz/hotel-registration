@@ -33,8 +33,6 @@ public  class VerifyingCPF {
               throw new GuestException("O CPF informado é invalido");
 
           }
-          System.out.print(secondToLastNumber(CPF));
-          System.out.print(lastNumber(CPF));
           return CPF;
 
      }
