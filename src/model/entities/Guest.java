@@ -8,12 +8,11 @@ public class Guest {
    private String name;
    private Integer age;
    private String cpf;
-   private VerifyingCPF vp = new VerifyingCPF();
 
    public Guest(String name, Integer age, String cpf){
        this.name = name;
        this.age = age;
-       this.cpf= vp.validateCPF(cpf);
+       this.cpf= VerifyingCPF.validateCPF(cpf);
    };
    public String getName(){
        return name;
