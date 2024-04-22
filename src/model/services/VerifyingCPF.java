@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public  class VerifyingCPF {
-     private final Set<String> invalidCPFs = new HashSet<>(Arrays.asList(
+     private static final Set<String> invalidCPFs = new HashSet<>(Arrays.asList(
              "00000000000",
              "11111111111",
              "22222222222",
@@ -24,7 +24,7 @@ public  class VerifyingCPF {
 
 
 
-     public String validateCPF(String CPF){
+     public static String validateCPF(String CPF){
           if(!(invalidCPFs.contains(CPF) || CPF.length() != 10)){
               if(!(secondToLastNumber(CPF) == CPF.charAt(9) && lastNumber(CPF) == CPF.charAt(10))){
                    throw new GuestException("O CPF informado é invalido");
@@ -39,7 +39,7 @@ public  class VerifyingCPF {
      // obtei por dividir a verficação criando dois metoddos privados segundarios
      // que seram usados dentro do validateCPF
 
-     private int lastNumber(String CPF){
+     private static int lastNumber(String CPF){
           int sum = 0;
           int multiplie = 10;
 
@@ -51,7 +51,7 @@ public  class VerifyingCPF {
           int lastNumber = ((sum * 10) % 11 > 9)? 0 : (sum * 10) % 11;
           return lastNumber;
      }
-     private int secondToLastNumber(String CPF){
+     private static int secondToLastNumber(String CPF){
           int sum = 0;
           int multiplie = 11;
 
